@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react"
-import { toast } from "react-toastify"
-import Spinner from "../../components/Spinner"
-import ApiRequest from "../../services/apiRequestService"
+import { useEffect } from "react"
 import CreateFrom from "../../components/CreateForm"
 
 function SpotNew() {
-  const [isLoading, setIsLoading] = useState(false)
-
   useEffect(() => {}, [])
-
-  if (isLoading) {
-    return <Spinner />
-  }
 
   return (
     <>

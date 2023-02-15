@@ -1,16 +1,6 @@
-import { useEffect, useState } from "react"
-import Spinner from "../../components/Spinner"
 import EditFrom from "../../components/EditFrom"
 
 function SpotEdit() {
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {}, [])
-
-  if (isLoading) {
-    return <Spinner />
-  }
-
   return (
     <>
       <section className="mt-2 mb-2">

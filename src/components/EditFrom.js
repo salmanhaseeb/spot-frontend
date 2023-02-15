@@ -35,7 +35,7 @@ function EditFrom() {
         toast.error(message)
         setIsLoading(false)
       })
-  }, [])
+  }, [id])
 
   const handleImage = (event, index) => {
     setImagesAttributes(
@@ -47,7 +47,7 @@ function EditFrom() {
             return { ...v, primary: event.target.checked ? true : false }
           }
         } else {
-          if (v.primary && event.target.name != "image" + (index + 1)) {
+          if (v.primary && event.target.name !== "image" + (index + 1)) {
             return { ...v, primary: false }
           } else {
             return v
@@ -174,7 +174,7 @@ function EditFrom() {
             <div className="row mb-3">
               <label htmlFor={"image" + (index + 1)} className="form-label">
                 Image {index + 1}{" "}
-                {imageAttribute?.id && imageAttribute?.destroy != 1 && (
+                {imageAttribute?.id && imageAttribute?.destroy !== 1 && (
                   <button
                     className="btn btn-outline-danger btn-sm"
                     onClick={() => {
@@ -186,12 +186,13 @@ function EditFrom() {
                   </button>
                 )}
               </label>
-              {imageAttribute?.id && imageAttribute?.destroy != 1 ? (
+              {imageAttribute?.id && imageAttribute?.destroy !== 1 ? (
                 <>
                   <div className="col-md-6">
                     <img
                       src={"http://localhost:3001/" + imageAttribute.file}
                       style={{ width: "500px" }}
+                      alt="..."
                     />
                   </div>
                 </>

@@ -27,7 +27,7 @@ function CreateFrom() {
             return { ...v, primary: event.target.checked ? true : false }
           }
         } else {
-          if (v.primary && event.target.name != "image" + (index + 1)) {
+          if (v.primary && event.target.name !== "image" + (index + 1)) {
             return { ...v, primary: false }
           } else {
             return v
@@ -137,7 +137,7 @@ function CreateFrom() {
       {imagesAttributes.map((imageAttribute, index) => {
         return (
           <>
-            <div className=" row mb-3">
+            <div className=" row mb-3" key={index + 1}>
               <label htmlFor={"image" + (index + 1)} className="form-label">
                 Image {index + 1}
               </label>

@@ -10,8 +10,8 @@ function SpotItem({ spot }) {
   }
   return (
     <>
-      <div class="col-sm-4">
-        <div class="card">
+      <div className="col-sm-4">
+        <div className="card">
           <img
             src={
               spot?.images.length > 0
@@ -37,7 +37,6 @@ function SpotItem({ spot }) {
               ${spot?.price}{" "}
               <span className="float-end">
                 <FontAwesomeIcon icon={faStar} className="star-color" />
-                {/* <i class="fa-solid fa-user"></i> */}
                 {spot?.average_review_star ? spot?.average_review_star : 0}(
                 {spot?.review_count})
               </span>{" "}

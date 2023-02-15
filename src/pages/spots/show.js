@@ -35,7 +35,7 @@ function SpotShow() {
         toast.error(message)
         setIsLoading(false)
       })
-  }, [refresh])
+  }, [refresh, id])
 
   const onDelete = () => {
     ApiRequest.delete_data("api/v1/spots/", spot?.id)
@@ -61,57 +61,63 @@ function SpotShow() {
 
   return (
     <>
-      <div class="card mt-5">
+      <div className="card mt-5">
         <div
           id="carouselExampleControls"
-          class="carousel slide"
+          className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner">
+          <div className="carousel-inner">
             {spot?.images.length > 0 ? (
               spot?.images.map((image, index) => {
                 return (
                   <div
-                    class={
+                    className={
                       image.primary ? "carousel-item active" : "carousel-item"
                     }
                   >
                     <img
                       src={config.BASE_URL + image.file}
-                      class="d-block w-100"
+                      className="d-block w-100"
                       alt="..."
                     />
                   </div>
                 )
               })
             ) : (
-              <div class="carousel-item active">
-                <img src={propertyImage} class="d-block w-100" alt="..." />
+              <div className="carousel-item active">
+                <img src={propertyImage} className="d-block w-100" alt="..." />
               </div>
             )}
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
 
-        <div class="card-body">
-          <h5 class="card-title">
+        <div className="card-body">
+          <h5 className="card-title">
             {spot?.title}{" "}
             <Link to={"/edit/" + spot?.id}>
               <FontAwesomeIcon icon={faEdit} className="text-primary" />{" "}
@@ -131,7 +137,7 @@ function SpotShow() {
           ></div>
         </div>
         <hr />
-        <div class="card-body">
+        <div className="card-body">
           <h3>Review</h3>
           {spot?.reviews.length > 0 ? (
             spot?.reviews.map((review, index) => {

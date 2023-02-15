@@ -60,7 +60,7 @@ function ReviewEdit({ spotID, review, refresh }) {
     <>
       <button
         type="button"
-        class="btn btn-outline-info btn-sm"
+        className="btn btn-outline-info btn-sm"
         data-bs-toggle="modal"
         data-bs-target={"#edit" + review?.id}
       >
@@ -68,7 +68,7 @@ function ReviewEdit({ spotID, review, refresh }) {
       </button>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id={"edit" + review?.id}
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -76,14 +76,14 @@ function ReviewEdit({ spotID, review, refresh }) {
         aria-labelledby={"editlabel" + review?.id}
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id={"editlabel" + review?.id}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id={"editlabel" + review?.id}>
                 Edit Review
               </h5>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   your Name
@@ -130,10 +130,10 @@ function ReviewEdit({ spotID, review, refresh }) {
                 </select>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-outline-secondary btn-sm"
+                className="btn btn-outline-secondary btn-sm"
                 data-bs-dismiss="modal"
               >
                 Close
@@ -144,7 +144,7 @@ function ReviewEdit({ spotID, review, refresh }) {
                   OnEdit(e)
                 }}
                 data-bs-dismiss="modal"
-                class="btn btn-outline-primary btn-sm"
+                className="btn btn-outline-primary btn-sm"
               >
                 Update
               </button>
